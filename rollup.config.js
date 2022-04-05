@@ -11,17 +11,17 @@ const input = "src/index.ts";
 const plugins = [
   resolve(),
   typescript({
-    typescript: require("typescript")
+    typescript: require("typescript"),
   }),
   commonjs(),
   json(),
   cleanup(),
-  filesize()
+  filesize(),
 ];
 
 const externals = [
   ...Object.keys(pkg.dependencies || {}),
-  ...Object.keys(pkg.peerDependencies || {})
+  ...Object.keys(pkg.peerDependencies || {}),
 ];
 
 export default [
@@ -31,10 +31,10 @@ export default [
       {
         file: pkg.main,
         format: "cjs",
-        sourcemap: true
-      }
+        sourcemap: true,
+      },
     ],
     external: externals,
-    plugins
-  }
+    plugins,
+  },
 ];

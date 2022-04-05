@@ -174,6 +174,7 @@ export function GridItem({
       grid
     })
   ) : (
+    // @ts-ignore
     <animated.div {...props}>{children}</animated.div>
   );
 }
